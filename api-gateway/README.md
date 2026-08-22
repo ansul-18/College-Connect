@@ -40,7 +40,6 @@ The API Gateway is responsible for:
 * Spring Cloud Gateway
 * Spring Cloud Netflix Eureka Client
 * Spring Boot Actuator
-* Maven
 
 ---
 
@@ -122,42 +121,9 @@ api-gateway/
 └── README.md
 ```
 
-### Important Files
-
-| File                         | Purpose                                 |
-| ---------------------------- | --------------------------------------- |
-| `ApiGatewayApplication.java` | Starts the Gateway application          |
-| `application.properties`     | Gateway, Eureka and route configuration |
-| `pom.xml`                    | Project dependencies                    |
-| `README.md`                  | Development notes                       |
-
 ---
 
-## 5. Main Application Class
-
-```java
-@SpringBootApplication
-public class ApiGatewayApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(ApiGatewayApplication.class, args);
-    }
-}
-```
-
-### Annotation Used
-
-```text
-@SpringBootApplication
-```
-
-**Why?**
-
-This is the main Spring Boot application annotation. It enables the application configuration, component scanning and Spring Boot auto-configuration.
-
----
-
-# 6. Application Properties
+# 5. Application Properties
 
 ## Server Port
 
@@ -280,7 +246,7 @@ This can be useful in development environments where hostname resolution may cau
 
 ---
 
-# 7. Quick Property Reference
+# 6. Quick Property Reference
 
 ```text
 server.port
@@ -304,7 +270,7 @@ eureka.instance.prefer-ip-address
 
 ---
 
-# 8. Gateway Request Flow
+# 7. Gateway Request Flow
 
 Example:
 
@@ -349,7 +315,7 @@ Frontend
 
 ---
 
-# 9. Routes
+# 8. Routes
 
 The Gateway will provide routes for the project services.
 
@@ -393,7 +359,7 @@ instead of directly calling every microservice.
 
 ---
 
-# 10. Why Eureka + Gateway?
+# 9. Why Eureka + Gateway?
 
 Without service discovery:
 
@@ -424,7 +390,7 @@ The Gateway discovers services using their registered service names.
 
 ---
 
-# 11. Important Concepts Explored
+# 10. Important Concepts Explored
 
 ```text
 API Gateway
@@ -441,7 +407,7 @@ Spring Boot Actuator
 
 ---
 
-# 12. Reusable Knowledge
+# 11. Reusable Knowledge
 
 When creating an API Gateway for another Spring Boot microservices project:
 
@@ -480,7 +446,7 @@ Security Configuration
 
 ---
 
-# 13. Current Architecture
+# 12. Current Architecture
 
 ```text
                          FRONTEND
@@ -505,7 +471,7 @@ Security Configuration
 
 ---
 
-# 14. Development Status
+# 13. Development Status
 
 ```text
 Eureka Server  → DONE
