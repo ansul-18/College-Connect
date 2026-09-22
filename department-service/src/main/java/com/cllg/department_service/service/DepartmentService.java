@@ -14,4 +14,6 @@ public interface DepartmentService {
     List<DepartmentResponse> getAll();
     void delete(Long id);
     DepartmentResponse update(Long id,DepartmentRequest request);
+    DepartmentResponse getByCode(String code);
+
 }

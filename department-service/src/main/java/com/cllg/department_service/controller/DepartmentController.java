@@ -33,6 +33,11 @@ public class DepartmentController {
         return ResponseEntity.ok(departmentService.getById(id));
     }
 
+    @GetMapping("/code/{code}")
+    public ResponseEntity<DepartmentResponse> getByCode(@PathVariable String code) {
+        return ResponseEntity.ok(departmentService.getByCode(code));
+    }
+
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id){
         departmentService.delete(id);

@@ -55,6 +55,11 @@ public class DepartmentServiceImpl implements DepartmentService {
                 .orElseThrow(() -> new ResourceNotFoundException("Department not found with id: " + id));
     }
 
+    public DepartmentResponse getByCode(String code) {
+        Department department = repository.findByCodeIgnoreCase(code.trim())
+                        .orElseThrow(() -> new ResourceNotFoundException("Department not found with code: " + code));
+        return mapToResponse(department);
+    }
 
     //Response
     private DepartmentResponse mapToResponse(Department department) {

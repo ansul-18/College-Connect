@@ -1,7 +1,7 @@
 package com.cllg.auth_service.entity;
 
+import com.cllg.auth_service.enums.Role;
 import jakarta.persistence.*;
-import jakarta.ws.rs.GET;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -20,7 +20,7 @@ public class User {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false,unique = true)
+    @Column(nullable = false, unique = true)
     private String email;
 
     @Column(nullable = false)
@@ -31,13 +31,12 @@ public class User {
     private Role role;
 
     @Builder.Default
-    private boolean enabled=true;
+    private boolean enabled = true;
 
     private LocalDateTime createdAt;
 
     @PrePersist
-    protected void onCreate(){
-        this.createdAt=LocalDateTime.now();
+    protected void onCreate() {
+        this.createdAt = LocalDateTime.now();
     }
-
 }
